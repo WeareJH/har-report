@@ -1,0 +1,302 @@
+[
+    {
+        "startedDateTime": "2015-02-09T11:31:06.542Z",
+        "time": 355.72004318237305,
+        "request": {
+            "method": "GET",
+            "url": "http://shop.my-website.co.uk/basket.js",
+            "httpVersion": "HTTP/1.1",
+            "headers": [
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Accept-Encoding",
+                    "value": "gzip, deflate, sdch"
+                },
+                {
+                    "name": "Host",
+                    "value": "shop.my-website.co.uk"
+                },
+                {
+                    "name": "Accept-Language",
+                    "value": "en-US,en;q=0.8"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36"
+                },
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "Referer",
+                    "value": "http://www.my-website.co.uk/"
+                },
+                {
+                    "name": "Cookie",
+                    "value": "frontend=uctuj6174a0nh5tcifmadn2h06; CUSTOMER_SEGMENT_IDS=2; _gat_UA-46035365-1=1; _ga=GA1.4.2123823943.1423481428; _gat_UA-44073543-2=1; frontend=uctuj6174a0nh5tcifmadn2h06; _gat_UA-44073543-2=1; _ga=GA1.3.138200806.1423481458; _gat_UA-46035365-1=1"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache"
+                }
+            ],
+            "queryString": [],
+            "cookies": [
+                {
+                    "name": "frontend",
+                    "value": "uctuj6174a0nh5tcifmadn2h06",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "CUSTOMER_SEGMENT_IDS",
+                    "value": "2",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "_gat_UA-46035365-1",
+                    "value": "1",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "_ga",
+                    "value": "GA1.4.2123823943.1423481428",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "_gat_UA-44073543-2",
+                    "value": "1",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "frontend",
+                    "value": "uctuj6174a0nh5tcifmadn2h06",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "_gat_UA-44073543-2",
+                    "value": "1",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "_ga",
+                    "value": "GA1.3.138200806.1423481458",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "_gat_UA-46035365-1",
+                    "value": "1",
+                    "expires": null,
+                    "httpOnly": false,
+                    "secure": false
+                }
+            ],
+            "headersSize": 630,
+            "bodySize": 0
+        },
+        "response": {
+            "status": 200,
+            "statusText": "OK",
+            "httpVersion": "HTTP/1.1",
+            "headers": [
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Date",
+                    "value": "Mon, 09 Feb 2015 11:31:06 GMT"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "Server",
+                    "value": "Apache"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Connection",
+                    "value": "Keep-Alive"
+                },
+                {
+                    "name": "P3p",
+                    "value": "CP=\"CAO PSA OUR\""
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "frontend=uctuj6174a0nh5tcifmadn2h06; expires=Mon, 09-Feb-2015 12:31:06 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "CUSTOMER=deleted; expires=Sun, 09-Feb-2014 11:31:05 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "CUSTOMER_INFO=deleted; expires=Sun, 09-Feb-2014 11:31:05 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "CUSTOMER_AUTH=deleted; expires=Sun, 09-Feb-2014 11:31:05 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "NEWMESSAGE=deleted; expires=Sun, 09-Feb-2014 11:31:05 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "NEWMESSAGE=deleted; expires=Sun, 09-Feb-2014 11:31:05 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "NEWMESSAGE=deleted; expires=Sun, 09-Feb-2014 11:31:05 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "NEWMESSAGE=deleted; expires=Sun, 09-Feb-2014 11:31:05 GMT; path=/; domain=shop.my-website.co.uk"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "text/html; charset=UTF-8"
+                },
+                {
+                    "name": "Keep-Alive",
+                    "value": "timeout=15, max=97"
+                },
+                {
+                    "name": "Content-Length",
+                    "value": "6581"
+                },
+                {
+                    "name": "Expires",
+                    "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                }
+            ],
+            "cookies": [
+                {
+                    "name": "frontend",
+                    "value": "uctuj6174a0nh5tcifmadn2h06",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2015-02-09T12:31:06.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "CUSTOMER",
+                    "value": "deleted",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2014-02-09T11:31:05.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "CUSTOMER_INFO",
+                    "value": "deleted",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2014-02-09T11:31:05.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "CUSTOMER_AUTH",
+                    "value": "deleted",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2014-02-09T11:31:05.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "NEWMESSAGE",
+                    "value": "deleted",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2014-02-09T11:31:05.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "NEWMESSAGE",
+                    "value": "deleted",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2014-02-09T11:31:05.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "NEWMESSAGE",
+                    "value": "deleted",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2014-02-09T11:31:05.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "NEWMESSAGE",
+                    "value": "deleted",
+                    "path": "/",
+                    "domain": "shop.my-website.co.uk",
+                    "expires": "2014-02-09T11:31:05.000Z",
+                    "httpOnly": false,
+                    "secure": false
+                }
+            ],
+            "content": {
+                "size": 36752,
+                "mimeType": "text/html",
+                "compression": 30171
+            },
+            "redirectURL": "",
+            "headersSize": 1250,
+            "bodySize": 6581
+        },
+        "cache": {},
+        "timings": {
+            "blocked": 3.80300000142597,
+            "dns": -1,
+            "connect": -1,
+            "send": 0.06299999949988022,
+            "wait": 310.85700000039617,
+            "receive": 40.997043181051026,
+            "ssl": -1
+        },
+        "connection": "35466",
+        "pageref": "page_5"
+    }
+]

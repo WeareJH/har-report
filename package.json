@@ -1,0 +1,35 @@
+{
+  "name": "har-report",
+  "version": "0.0.1",
+  "description": "Run checks/tests against HAR files",
+  "main": "index.js",
+  "scripts": {
+    "lint": "jshint reporters/* index.js cli.js test/*.js",
+    "unit": "mocha",
+    "test": "npm run lint && npm run unit"
+  },
+  "files": [
+    "cli.js",
+    "index.js",
+    "lib",
+    "reporters"
+  ],
+  "author": {
+    "name": "Shane Osbourne"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async-each-series": "^0.1.1",
+    "eazy-logger": "^2.1.1",
+    "fs-extra": "^0.16.3",
+    "immutable": "^3.6.2",
+    "lodash": "^3.1.0",
+    "meow": "^3.0.0"
+  },
+  "bin": "cli.js",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "jshint": "^2.6.0",
+    "mocha": "^2.1.0"
+  }
+}
