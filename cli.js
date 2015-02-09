@@ -1,12 +1,14 @@
-var cli    = require("meow");
-var input  = cli({
-    help: ["Usage: $ har-report index.js <json file>"]
+#!/usr/bin/env node
+
+var cli = require("meow")({
+    help: ["Usage: $ har-report harfile.json\n"]
 });
 
-try {
-    require("./")({
-        input: require(require("path").resolve(input.input[0]))
-    });
-} catch (e) {
-    console.log(e.message);
+if (typeof cli.input[0] !== "string") {
+    console.log(cli.help);
+    return;
 }
+
+require("./")({
+    input: require(require("path").resolve(cli.input[0]))
+});

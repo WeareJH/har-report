@@ -1,4 +1,4 @@
-var json = require("./test/fixtures/my-website.json");
+var json = require("./test/fixtures/har.json");
 
 require("./")({
     input: json,
