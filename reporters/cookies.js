@@ -1,12 +1,10 @@
-var _      = require("lodash");
+var _ = require("lodash");
 
 module.exports = function logCookies (opts, done) {
 
     var outFile = "duplicate-cookies.json";
 
     var out = opts.input.log.entries.filter(function (item) {
-        return item.response.cookies.length;
-    }).filter(function (item) {
         return _.uniq(item.response.cookies, "name").length !== item.response.cookies.length;
     });
 

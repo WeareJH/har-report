@@ -5,7 +5,8 @@ var logger    = require("./lib/logger");
 var Immutable = require("immutable");
 
 /**
- * @type {{cwd: (String)}}
+ * Default Configuration, can be extended
+ * @type {any}
  */
 var defaultConfig = Immutable.fromJS({
     cwd:    process.cwd(),
@@ -13,9 +14,11 @@ var defaultConfig = Immutable.fromJS({
     logLevel: "info"
 });
 
+/**
+ * Main export
+ * @param {{input: object, config: [object], cb: function}} opts
+ */
 module.exports = function (opts) {
-
-    opts = opts || {};
 
     var config = defaultConfig.mergeDeep(Immutable.fromJS(opts.config || {}));
 
@@ -35,7 +38,8 @@ module.exports = function (opts) {
 };
 
 /**
- * @param opts
+ * Run each task in sequence
+ * @param {object} opts
  */
 function runTasks(opts) {
 
@@ -46,12 +50,18 @@ function runTasks(opts) {
 
         logger.debug("{yellow:--->} {grey:Running task:   {grey:%s}", task.name);
 
-        task.fn({
-            input: opts.input
-        }, function (err, out) {
+        task.fn({input: opts.input}, function (err, out) {
+
+            /**
+             * Return early with any errors
+             */
             if (err) {
                 return cb(err);
             }
+
+            /**
+             * Accept any files/logs returned by a task
+             */
             if (out) {
                 if (out.file) {
                     files.push(writeFile({file: out.file, config: opts.config}));
@@ -67,19 +77,33 @@ function runTasks(opts) {
             cb(null);
         });
 
-    }, function (err) {
+    }, complete);
 
+    /**
+     * @param {Error} err
+     * @returns {*}
+     */
+    function complete (err) {
+        /**
+         * Call user callback with any error
+         */
         if (err) {
             return opts.cb(err);
         }
 
+        /**
+         * Call user callback with success
+         */
         opts.cb(null, {
             files: files,
             logs:  logs
         });
-    });
+    }
 }
 
+/**
+ * @param {object} opts
+ */
 function logMessage (opts) {
     if (Array.isArray(opts.log)) {
         opts.log.forEach(function (item) {
@@ -89,7 +113,8 @@ function logMessage (opts) {
 }
 
 /**
- * @param opts
+ * @param {object} opts
+ * @returns {object}
  */
 function writeFile (opts) {
 
@@ -104,5 +129,6 @@ function writeFile (opts) {
     fs.writeFileSync(filepath, content);
 
     opts.file.filepath = filepath;
+
     return opts.file;
 }
