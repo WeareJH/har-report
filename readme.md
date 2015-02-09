@@ -1,5 +1,6 @@
 # Har Report
 [![Travis branch](https://img.shields.io/travis/WeareJH/har-report/master.svg?style=flat-square)]()
+[![NPM version](https://img.shields.io/npm/v/har-report.svg?style=flat-square)](https://www.npmjs.com/package/har-report)
  
 Provide reports on website requests/responses via HAR files.
 
