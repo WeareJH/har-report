@@ -1,4 +1,3 @@
-var _     = require("lodash");
 var utils = require("../lib/utils");
 
 module.exports = function logCookies (opts, done) {

@@ -1,5 +1,4 @@
 var json   = require("./fixtures/har.json");
-var path   = require("path");
 var har    = require("../");
 var assert = require("chai").assert;
 
