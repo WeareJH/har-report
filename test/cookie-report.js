@@ -8,12 +8,13 @@ describe("Parsing cookie errors", function(){
         har({
             input: json,
             cb: function (err, out) {
-                assert.equal(out.files.length, 1);
-                assert.include(
-                    out.files[0].filepath,
-                    path.resolve(process.cwd(), "report/duplicate-cookies.json")
-                );
-                assert.equal(out.logs.length, 1);
+
+                var file = out.files.filter(function (item) {
+                    return item.path === "cookie-report.json";
+                })[0];
+
+                assert.equal(file.data.length, 1);
+
                 done();
             }
         });
@@ -25,12 +26,13 @@ describe("Parsing cookie errors", function(){
             },
             input: json,
             cb: function (err, out) {
-                assert.equal(out.files.length, 1);
+                var file = out.files.filter(function (item) {
+                    return item.path === "cookie-report.json";
+                })[0];
                 assert.include(
-                    out.files[0].filepath,
-                    path.resolve(process.cwd(), "reportz/duplicate-cookies.json")
+                    file.filepath,
+                    path.resolve(process.cwd(), "reportz/cookie-report.json")
                 );
-                assert.equal(out.logs.length, 1);
                 done();
             }
         });

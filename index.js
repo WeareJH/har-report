@@ -11,7 +11,8 @@ var Immutable = require("immutable");
 var defaultConfig = Immutable.fromJS({
     cwd:    process.cwd(),
     outdir: "report",
-    logLevel: "info"
+    logLevel: "info",
+    writeFiles: true
 });
 
 /**
@@ -125,8 +126,10 @@ function writeFile (opts) {
         content = JSON.stringify(opts.file.data, null, 4);
     }
 
-    fs.ensureDirSync(path.dirname(filepath));
-    fs.writeFileSync(filepath, content);
+    if (opts.config.get("writeFiles")) {
+        fs.ensureDirSync(path.dirname(filepath));
+        fs.writeFileSync(filepath, content);
+    }
 
     opts.file.filepath = filepath;
 
