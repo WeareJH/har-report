@@ -2,11 +2,15 @@ var utils = require("../lib/utils");
 
 module.exports = function logCookies (opts, done) {
 
-    var outfile = "js-report.json";
+    var outfile = "image-report.json";
 
     var out = opts.input.log.entries.filter(function (item) {
         var urlObj = require("url").parse(item.request.url);
-        return require("path").extname(urlObj.pathname).slice(1) === "js";
+        var ext = require("path").extname(urlObj.pathname).slice(1);
+        if (ext.match(/jpe?g|png/i)) {
+            return true;
+        }
+        return false;
     }).map(function (item) {
         return {
             url: item.request.url,
@@ -20,7 +24,7 @@ module.exports = function logCookies (opts, done) {
 
     var dataOut = {
         url: opts.input.log.pages[0].title,
-        reportType: "JS resources",
+        reportType: "Image resources",
         fileCount: out.length,
         filelist: out.map(function (item) {
             return item.url;
@@ -39,7 +43,7 @@ module.exports = function logCookies (opts, done) {
             log: [
                 {
                     level: "info",
-                    message: ["JS file report written to {yellow:%s", outfile]
+                    message: ["Image file report written to {yellow:%s", outfile]
                 }
             ]
         });
