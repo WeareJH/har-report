@@ -14,5 +14,9 @@ module.exports = [
     {
         name: "List Images",
         fn: require("./list-images")
+    },
+    {
+        name: "Overview",
+        fn: require("./overview")
     }
 ];
