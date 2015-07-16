@@ -6,6 +6,6 @@ require("./")({
         logLevel: "debug"
     },
     cb: function (err, out) {
-
+        console.log(done);
     }
 });
