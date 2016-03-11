@@ -41,18 +41,38 @@ module.exports = function logCookies (opts, done) {
             }
         }
     };
-
     if (out.length) {
         return done(null, {
-            file: {
-                type: "json",
-                path: outfile,
-                data: dataOut
-            },
+            files: [
+                {
+                    type: "json",
+                    path: outfile,
+                    data: dataOut
+                },
+                {
+                    type: "txt",
+                    path: 'images.txt',
+                    content: images.join('\n')
+                },
+                {
+                    type: "txt",
+                    path: "css.txt",
+                    content: css.join('\n')
+                },
+                {
+                    type: "txt",
+                    path: "js.txt",
+                    content: js.join('\n')
+                }
+            ],
             log: [
                 {
                     level: "info",
-                    message: ["Overview file report written to {yellow:%s", outfile]
+                    message: ["Overview file report written to {yellow:%s}", outfile]
+                },
+                {
+                    level: "info",
+                    message: ["newline separated files with links to css/js/images saved as txt files"]
                 }
             ]
         });

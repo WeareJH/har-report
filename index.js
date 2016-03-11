@@ -44,8 +44,10 @@ module.exports = function (opts) {
  */
 function runTasks(opts) {
 
-    var files = [];
-    var logs  = [];
+    var files  = [];
+    var logs   = [];
+    var outdir = require('url').parse(opts.input.log.entries[0].request.url);
+    var subdir = outdir.pathname === '/' ? 'index' : outdir.pathname;
 
     each(opts.tasks, function (task, cb) {
 
@@ -64,12 +66,17 @@ function runTasks(opts) {
              * Accept any files/logs returned by a task
              */
             if (out) {
+                if (out.files && out.files.length) {
+                    out.files.forEach(function (file) {
+                        files.push(writeFile({file: file, config: opts.config, subdir: subdir}));
+                    });
+                }
                 if (out.file) {
-                    files.push(writeFile({file: out.file, config: opts.config}));
+                    files.push(writeFile({file: out.file, config: opts.config, subdir: subdir}));
                 }
                 if (out.log) {
                     logs.push(out.log);
-                    logMessage({log: out.log, config: opts.config});
+                    logMessage({log: out.log, config: opts.config, subdir: subdir});
                 }
             }
 
@@ -120,7 +127,7 @@ function logMessage (opts) {
 function writeFile (opts) {
 
     var content  = opts.file.content || "";
-    var filepath = path.join(opts.config.get("cwd"), opts.config.get("outdir"), opts.file.path);
+    var filepath = path.join(opts.config.get("cwd"), opts.config.get("outdir"), opts.subdir, opts.file.path);
 
     if (opts.file.type === "json") {
         content = JSON.stringify(opts.file.data, null, 4);
