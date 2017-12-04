@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "jshint reporters/* index.js cli.js test/*.js",
-    "unit": "mocha",
-    "test": "npm run lint && npm run unit"
+    "test": "mocha"
   },
   "files": [
     "cli.js",

@@ -18,6 +18,12 @@ describe("Running JS report", function(){
                 assert.equal(file.data.totalSize, "1.7 MB");
                 assert.equal(file.data.fileCount, 13);
 
+                assert.equal(file.data.ownDomain.fileCount, 3);
+                assert.equal(file.data.ownDomain.totalSize, '214.9 kB');
+
+                assert.equal(file.data.thirdParty.fileCount, 10);
+                assert.equal(file.data.thirdParty.totalSize, '1.5 MB');
+
                 done();
             }
         });
