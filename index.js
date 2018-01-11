@@ -68,15 +68,15 @@ function runTasks(opts) {
             if (out) {
                 if (out.files && out.files.length) {
                     out.files.forEach(function (file) {
-                        files.push(writeFile({file: file, config: opts.config, subdir: subdir}));
+                        files.push(writeFile({file: file, config: opts.config}));
                     });
                 }
                 if (out.file) {
-                    files.push(writeFile({file: out.file, config: opts.config, subdir: subdir}));
+                    files.push(writeFile({file: out.file, config: opts.config}));
                 }
                 if (out.log) {
                     logs.push(out.log);
-                    logMessage({log: out.log, config: opts.config, subdir: subdir});
+                    logMessage({log: out.log, config: opts.config});
                 }
             }
 
@@ -127,7 +127,7 @@ function logMessage (opts) {
 function writeFile (opts) {
 
     var content  = opts.file.content || "";
-    var filepath = path.join(opts.config.get("cwd"), opts.config.get("outdir"), opts.subdir, opts.file.path);
+    var filepath = path.join(opts.config.get("cwd"), opts.config.get("outdir"), opts.file.path);
 
     if (opts.file.type === "json") {
         content = JSON.stringify(opts.file.data, null, 4);
